@@ -185,7 +185,7 @@ body{
     bottom: 50px;
     left: 50%;
     border-radius: 30px;
-    animation: showImage .5s linear 1 forwards;
+    animation: showImage .3s linear 1 forwards;
 }
 @keyframes showImage{
     to{
@@ -267,7 +267,7 @@ body{
 .carousel.prev .thumbnail .item:nth-child(1){
     overflow: hidden;
     opacity: 0;
-    animation: showThumbnail .5s linear 1 forwards;
+    animation: showThumbnail .3s linear 1 forwards;
 }
 .carousel.next .arrows button,
 .carousel.prev .arrows button{
@@ -300,11 +300,10 @@ body{
 </style>
 </head>
 <body>
-
-    <audio id="background-music" autoplay loop>
-        <source src="https://youtu.be/--gfhNviWkI?si=eddfiLCWj6HBW443" type="audio/mp3">
-        Your browser does not support the audio element.
-    </audio>
+  <!-- Background Music -->
+  <audio id="background-music" loop autoplay>
+    <source src="/Don't mind - Kent Jones [Lyrics].mp3" type="audio/mp3">
+</audio>
     
 
     <!-- carousel -->
@@ -476,6 +475,49 @@ body{
                 next.click();
             }, timeAutoNext)
         }
+
+
+
+// JavaScript to handle play/pause functionality
+window.onload = function() {
+        var audio = document.getElementById('background-music');
+
+        // Function to ensure the music plays continuously
+        function playMusic() {
+            // Check if audio is already playing
+            if (audio.paused || audio.ended) {
+                audio.play().catch(function(error) {
+                    console.log('Autoplay blocked:', error);
+                });
+            }
+        }
+
+        // Automatically play music if it's not playing already
+        playMusic();
+
+        // Event listener for page visibility change (if the page is minimized or hidden)
+        document.addEventListener('visibilitychange', function() {
+            if (document.visibilityState === 'visible') {
+                playMusic();
+            }
+        });
+
+        // Event listener for page unload to handle continuous play
+        window.addEventListener('beforeunload', function() {
+            localStorage.setItem('audioPlaying', 'true');
+        });
+
+        // Ensure that music plays when the page is refreshed or navigated
+        if (localStorage.getItem('audioPlaying') !== 'true') {
+            audio.play().catch(function(error) {
+                console.log('Autoplay blocked:', error);
+            });
+            localStorage.setItem('audioPlaying', 'true');
+        }
+
+        // Make sure it keeps looping without any interruption
+        audio.loop = true;
+    };
         </script>
 </body>
 </html>

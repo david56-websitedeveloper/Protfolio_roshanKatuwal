@@ -3,82 +3,139 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Portfoilo</title>
-    <!-- css linked -->
-     <link rel="stylesheet" href="/css/home.css">
+    <title>Debit Katuwal | Full Stack Developer</title>
+    <link rel="stylesheet" href="/css/home.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body { background: linear-gradient(135deg, #0f0f0f 0%, #1a1a1a 100%); color: #ffffff; font-family: 'Inter', sans-serif; }
+        .accent-yellow { color: #fdd835; }
+    </style>
+<script src="https://unpkg.com/framer-motion/dist/framer-motion.umd.js"></script>
 </head>
-<body>
-    <!-- header staeted -->
-    <header>
-    <h1>Roshan Katuwal <span>(Debit Katuwal)</span></h1>
-    <p>Full Stack Web Developer</p>
+<body class="font-sans">
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const { motion } = window['framer-motion'];
 
-        <!-- nAVBAR -->
-             <nav>
-                <ul>
-                    <li> <a href="#home">Home</a></li>
-                    <li> <a href="#about">About</a></li>
-                    <li> <a href="#skills">Skills</a></li>
-                    <li> <a href="#projects">Projects</a></li>
-                    <li> <a href="#contact">Contract</a></li>
+            // Header Animation
+            motion.animate("header", { y: [-100, 0], opacity: [0, 1] }, { duration: 0.8 });
+
+            // Hero Text Animation
+            motion.animate("#home h2", { opacity: [0, 1], y: [20, 0] }, { duration: 1, delay: 0.3 });
+            motion.animate("#home p", { opacity: [0, 1], y: [20, 0] }, { duration: 1, delay: 0.5 });
+
+            // Button Hover Animation
+            document.querySelectorAll("button").forEach(button => {
+                button.addEventListener("mouseover", () => {
+                    button.style.transform = "scale(1.05)";
+                });
+                button.addEventListener("mouseout", () => {
+                    button.style.transform = "scale(1)";
+                });
+            });
+
+            // Skills Cards Animation
+            document.querySelectorAll("#skills .bg-gray-800").forEach((card, index) => {
+                motion.animate(card, { opacity: [0, 1], y: [30, 0] }, { duration: 0.6, delay: 0.3 * index });
+            });
+        });
+    </script>
+    <header class="bg-gradient-to-r from-black via-gray-900 to-black text-white py-6 shadow-md sticky top-0 z-50">
+        <div class="container mx-auto flex justify-between items-center px-6">
+            <h1 class="text-5xl font-bold">DEBIT KATUWAL  </h1>
+           <span class="text-yellow-400 ">Full Stack Developer</span>
+            <nav class="hidden md:block">
+                <ul class="flex space-x-8 text-lg">
+                    <li><a href="#home" class="hover:text-yellow-400">Home</a></li>
+                    <li><a href="#about" class="hover:text-yellow-400">About</a></li>
+                    <li><a href="#skills" class="hover:text-yellow-400">Skills</a></li>
+                    <li><a href="#projects" class="hover:text-yellow-400">Projects</a></li>
+                    <li><a href="#contact" class="hover:text-yellow-400">Contact</a></li>
                 </ul>
-             </nav>
+            </nav>
+        </div>
     </header>
 
-    <!-- home section -->
-<section id="home">
-    <h2>Welcome to My Portfolio</h2>
-    <p>I am a professional and passionate web developer with expertise in both frontend and backend development. I specialize in creating responsive, user-friendly websites and web applications.</p>
-    <p>Check out my wrok and feel free to get in touch with me for your next project!</p>
-</section>
-
-<!-- About Section -->
-<section id="about">
-    <h2>About</h2>
-    <p>I'm Roshan Katuwal, a web developer with a deep love for crafting dynamic and engaging user experiences. With a background in computer science and web development, I've developed skills in React, Node.js, JavaScript, HTML/CSS, and building responsive websites and MongoDB. </p>
-    <p>My goal is to help businesses grow by developing scalable and high-performing applications.</p>
-</section>
-
-<!-- Skiil selection -->
- <section id="skills">
-    <h2>Skills</h2>
-    <ul>
-    <li><strong>Languages:</strong>HTML, Css, JavaScript, Python, TypeScript, C programming</li>
-    <li><strong>Frameworks:</strong>Node.js (with Express.js), Django, Ruby on Rails, ASP.NET, Laravel, React and React Native</li>
-    <li><strong>Database:</strong>MongoDB, SQL</li>
-    <li><strong>Tools:</strong>Git, GitHub, Webpack, Docker</li>
-    <li><strong>Designs:</strong>Figma, Canva, Adobe xD, PsCs6</li>
-</ul>
- </section>
-
- <!-- project section -->
-  <section id="projects">
-    <h2>My Projects</h2>
-
-    <!-- div for projects -->
-    <div class="project-container project-list">
-        <div class="project">
-            <h3>Project 1: E-commerce Platform</h3>
-            <p>This project involved building a fully functional e-commerce website with a shopping cart, payment integration, and product recommendations. Built with React and Node.js.</p>
-            <a href="https://link-to-project-1" target="_blank">View Project</a>
-        </div>
-        <div class="project">
-            <h3>Project 2: Portfolio Website</h3>
-            <p>Designed and developed my personal portfolio website to showcase my skills, experience, and projects. Fully responsive and interactive using React and CSS Grid.</p>
-            <a href="http://127.0.0.1:5500/Home.html" target="_blank">View Project</a>
-        </div>
-        <div class="project">
-            <h3>Project 2: Portfolio Website</h3>
-            <p>Designed and developed my personal portfolio website to showcase my skills, experience, and projects. Fully responsive and interactive using React and CSS Grid.</p>
-            <a href="http://127.0.0.1:5500/Home.html" target="_blank">View Project</a>
-        </div>
-    </div>
     
-    
-  </section>
 
-  
-    <!-- js linked -->
-     <script src="/js/home.js"></script>
+    <section id="home" class="text-center py-32 bg-cover bg-center" style="background-image: url('/mnt/data/sp_slide_h_1.webp');">
+        <h2 class="text-6xl font-bold accent-yellow">Full Stack Developer</h2>
+        <p class="text-gray-300 mt-4 text-xl">Crafting Dynamic and Scalable Applications for Modern Web Experiences</p>
+        <button class="mt-8 px-8 py-4 bg-gradient-to-r from-yellow-400 to-yellow-600 text-black font-bold rounded-full shadow-lg hover:shadow-2xl transform hover:scale-105 transition duration-300">Contact Me</button>
+        <button class="mt-8 px-8 py-4 bg-gradient-to-r from-yellow-400 to-yellow-600 text-black font-bold rounded-full shadow-lg hover:shadow-2xl transform hover:scale-105 transition duration-300">Download My CV</button>
+    </section>
+
+
+    <section id="about" class="bg-gradient-to-r from-gray-900 to-black py-20 text-center">
+        <h2 class="text-4xl font-bold accent-yellow">About Me</h2>
+        <div class="max-w-3xl mx-auto mt-10 px-4">
+            <p class="text-gray-300 text-lg">
+                I am a passionate Full Stack Developer with a strong drive for problem-solving and a commitment to continuous learning. My experience spans across building scalable web applications, from designing intuitive user interfaces to developing robust backend systems. I thrive on tackling complex challenges and delivering high-quality, efficient solutions. My goal is to leverage my skills to create impactful and innovative digital experiences.
+            </p>
+        </div>
+    </section>
+
+    <section id="projects" class="bg-gradient-to-r from-gray-900 to-black py-20 text-center">
+        <h2 class="text-4xl font-bold accent-yellow">Projects</h2>
+        <div class="max-w-6xl mx-auto mt-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div class="bg-gray-800 p-6 rounded-xl project-card">
+                <h3 class="text-xl text-yellow-400">E-commerce Platform</h3>
+                <p class="text-gray-300 mt-2">React, FastAPI, MongoDB</p>
+                <p class="text-gray-300 mt-2">A full-stack e-commerce platform with user authentication, product catalog, and shopping cart functionality.</p>
+            </div>
+            <div class="bg-gray-800 p-6 rounded-xl project-card">
+                <h3 class="text-xl text-yellow-400">Portfolio Website</h3>
+                <p class="text-gray-300 mt-2">Responsive Design, Modern Technologies</p>
+                <p class="text-gray-300 mt-2">A personal portfolio website showcasing skills and projects with a responsive and modern design.</p>
+            </div>
+            <div class="bg-gray-800 p-6 rounded-xl project-card">
+                <h3 class="text-xl text-yellow-400">Expense Tracker App</h3>
+                <p class="text-gray-300 mt-2">React Native, Real-time Sync</p>
+                <p class="text-gray-300 mt-2">A cross-platform mobile app for tracking expenses with real-time synchronization.</p>
+            </div>
+        </div>
+    </section>
+
+
+
+
+    <section id="skills" class="bg-gradient-to-r from-black via-gray-900 to-black py-20 text-center">
+        <h2 class="text-4xl font-bold accent-yellow">Technical Skills</h2>
+        <div class="max-w-6xl mx-auto mt-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div class="bg-gray-800 p-6 rounded-xl">
+                <h3 class="text-xl text-yellow-400">Frontend Development</h3>
+                <ul class="text-gray-300 mt-2 list-disc list-inside">
+                    <li>HTML, CSS, JavaScript</li>
+                    <li>React.js, Vue.js, Angular</li>
+                    <li>Responsive Design, Tailwind CSS</li>
+                    <li>Animation Libraries (Framer Motion)</li>
+                    <li>Next.js, Svelte, Gatsby</li>
+                </ul>
+            </div>
+            <div class="bg-gray-800 p-6 rounded-xl">
+                <h3 class="text-xl text-yellow-400">Backend Development</h3>
+                <ul class="text-gray-300 mt-2 list-disc list-inside">
+                    <li>Node.js, Express, FastAPI</li>
+                    <li>Django, Flask</li>
+                    <li>GraphQL, REST APIs</li>
+                    <li>JWT Authentication, OAuth</li>
+                    <li>Microservices Architecture</li>
+                </ul>
+            </div>
+            <div class="bg-gray-800 p-6 rounded-xl">
+                <h3 class="text-xl text-yellow-400">Tools & Databases</h3>
+                <ul class="text-gray-300 mt-2 list-disc list-inside">
+                    <li>MongoDB, MySQL, PostgreSQL</li>
+                    <li>Docker, CI/CD, Git</li>
+                    <li>Redux, Zustand, MobX</li>
+                    <li>Cloud Services (AWS, GCP, Azure)</li>
+                    <li>GraphQL Playground, Postman</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+    <footer class="bg-gradient-to-r from-gray-900 to-black text-center text-gray-500 py-6 border-t border-gray-700">
+        <p>&copy; 2025 Debit Katuwal. All rights reserved.</p>
+    </footer>
 </body>
 </html>

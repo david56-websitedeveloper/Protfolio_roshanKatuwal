@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DocSearch Example</title>
+    <link rel="stylesheet" href="/css/practice.css">
+</head>
+<body>
+
+    <div class="docsearch-button-example">
+        <button class="DocSearch-Button">
+            <span class="DocSearch-Button-Container">
+                <span class="DocSearch-Search-Icon">🔍</span>
+                <span class="DocSearch-Button-Placeholder">Search</span>
+            </span>
+            <span class="DocSearch-Button-Keys">
+                <kbd class="DocSearch-Button-Key">Ctrl</kbd>
+                <kbd class="DocSearch-Button-Key">K</kbd>
+            </span>
+        </button>
+    </div>
+
+    <div class="DocSearch-Container">
+        <div class="DocSearch-Modal">
+            <div class="DocSearch-SearchBar">
+                <form class="DocSearch-Form">
+                    <span class="DocSearch-MagnifierLabel">
+                        <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" aria-hidden="true">
+                            <circle cx="11" cy="11" r="8"></circle>
+                            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                        </svg>
+                    </span>
+                    <input type="text" class="DocSearch-Input" placeholder="Search...">
+                    <button class="DocSearch-Reset" hidden="">
+                        <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" aria-hidden="true">
+                            <line x1="18" y1="6" x2="6" y2="18"></line>
+                            <line x1="6" y1="6" x2="18" y2="18"></line>
+                        </svg>
+                    </button>
+                </form>
+            </div>
+            <div class="DocSearch-Dropdown">
+                <ul>
+                    <li class="DocSearch-Hit">
+                        <a href="#">
+                            <div class="DocSearch-Hit-Container">
+                                <div class="DocSearch-Hit-content-wrapper">
+                                    <span class="DocSearch-Hit-title">Example Title</span>
+                                    <span class="DocSearch-Hit-path">Path/to/example</span>
+                                </div>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="DocSearch-Hit">
+                        <a href="#">
+                            <div class="DocSearch-Hit-Container">
+                                <div class="DocSearch-Hit-content-wrapper">
+                                    <span class="DocSearch-Hit-title">Another Result</span>
+                                    <span class="DocSearch-Hit-path">Another/path</span>
+                                </div>
+                            </div>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <footer class="DocSearch-Footer">
+                <ul class="DocSearch-Commands">
+                    <li>
+                        <span class="DocSearch-Commands-Key">Ctrl</span>
+                        <span class="DocSearch-Commands-Key">K</span>
+                        <span>to search</span>
+                    </li>
+                </ul>
+                <div class="DocSearch-Logo">
+                    <a href="https://www.algolia.com/docsearch">
+                        <svg width="100" height="20" viewBox="0 0 100 20" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M100 10c0 5.523-4.477 10-10 10H10C4.477 20 0 15.523 0 10S4.477 0 10 0h80c5.523 0 10 4.477 10 10z" fill="#5468FF"></path>
+                        </svg>
+                    </a>
+                </div>
+            </footer>
+        </div>
+    </div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+    const docsearchButton = document.querySelector('.DocSearch-Button');
+    const docsearchContainer = document.querySelector('.DocSearch-Container');
+    const docsearchInput = document.querySelector('.DocSearch-Input');
+    const docsearchReset = document.querySelector('.DocSearch-Reset');
+
+    if (!docsearchButton || !docsearchContainer || !docsearchInput || !docsearchReset) {
+        console.error('DocSearch elements not found.');
+        return;
+    }
+
+    // Function to open the DocSearch modal
+    const openDocSearch = () => {
+        docsearchContainer.style.display = 'block';
+        docsearchInput.focus();
+    };
+
+    // Function to close the DocSearch modal
+    const closeDocSearch = () => {
+        docsearchContainer.style.display = 'none';
+    };
+
+    // Open DocSearch on button click
+    docsearchButton.addEventListener('click', openDocSearch);
+
+    // Close DocSearch when clicking outside the modal
+    docsearchContainer.addEventListener('click', (event) => {
+        if (event.target === docsearchContainer) {
+            closeDocSearch();
+        }
+    });
+
+    // Close DocSearch on Escape key press
+    document.addEventListener('keydown', (event) => {
+        if (event.key === 'Escape') {
+            closeDocSearch();
+        }
+    });
+
+    // Simple Input clear on reset button.
+    docsearchReset.addEventListener('click', () => {
+      docsearchInput.value = '';
+      docsearchInput.focus();
+    });
+
+    // Show/Hide Reset Button based on input.
+    docsearchInput.addEventListener('input', () => {
+      if(docsearchInput.value.length > 0){
+        docsearchReset.removeAttribute('hidden');
+      } else {
+        docsearchReset.setAttribute('hidden', true);
+      }
+    });
+
+    // Basic keyboard shortcut (Ctrl+K)
+    document.addEventListener('keydown', (event) => {
+        if ((event.ctrlKey || event.metaKey) && event.key === 'k') {
+            event.preventDefault(); // Prevent default browser behavior
+            openDocSearch();
+        }
+    });
+
+    // Placeholder for actual search logic
+    docsearchInput.addEventListener('input', (event) => {
+        const query = event.target.value;
+        console.log('Search query:', query);
+        // Here you would typically integrate with Algolia or your search provider
+        // and update the search results in the DocSearch-Dropdown element.
+    });
+
+    // Placeholder for search result population.
+    // In a real DocSearch implementation, you'd fetch search results and populate
+    // the DocSearch-Dropdown's <ul> element with dynamically generated <li> elements.
+
+});
+</script>
+
+
+
+</body>
+</html>
