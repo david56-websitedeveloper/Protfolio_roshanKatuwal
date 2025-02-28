@@ -1,0 +1,10 @@
+.project-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.3);
+}
+
+body { background: linear-gradient(135deg, #0f0f0f 0%, #1a1a1a 100%); color: #ffffff; font-family: 'Inter', sans-serif; }
+.accent-yellow { color: #fdd835; }

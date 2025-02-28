@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Debit Katuwal | Full Stack Developer</title>
+    <style>
+       body {
+  background: linear-gradient(135deg, #0f0f0f 0%, #1a1a1a 100%);
+ 
+  font-family: 'Inter', sans-serif; /* Make sure 'Inter' font is loaded or available */
+}
+
+.accent-yellow {
+  color: #fdd835;
+}
+
+        header {
+            background: linear-gradient(to right, black, gray, black);
+            padding: 24px 0;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+            color: white;
+            position: sticky;
+            top: 0;
+            z-index: 50;
+        }
+
+        .header-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 24px;
+            color: white;
+        }
+
+        span{
+            font-size: 50px;
+        }
+
+        header h1 {
+            font-size: 32px;
+            font-weight: bold;
+        }
+
+        header span {
+            color: yellow;
+            font-size: 20px;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+        }
+
+        nav li {
+            margin-left: 32px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-size: 20px;
+        }
+
+        nav a:hover {
+            color: yellow;
+        }
+
+        section {
+            padding: 128px 0;
+            text-align: center;
+        }
+
+        #home {
+            background-image: url('/mnt/data/sp_slide_h_1.webp');
+            background-size: cover;
+            background-position: center;
+        }
+
+        #home h2 {
+            font-size: 48px;
+            font-weight: bold;
+            color: yellow;
+        }
+
+        #home p {
+            color: white;
+            margin-top: 16px;
+            font-size: 20px;
+        }
+
+        .button {
+            margin-top: 32px;
+            padding: 16px 32px;
+            background: linear-gradient(to right, red, white);
+            color: black;
+            font-weight: bold;
+            border-radius: 30px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+            border: none;
+        }
+
+        .button:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+        }
+
+        #about, #projects, #skills {
+            background: linear-gradient(to right, gray, black);
+        }
+
+        #about h2, #projects h2, #skills h2 {
+            font-size: 32px;
+            font-weight: bold;
+            color: yellow;
+        }
+
+        #about p {
+            max-width: 900px;
+            margin: 24px auto;
+            color: white;
+            font-size: 18px;
+            padding: 0 24px;
+        }
+
+        .project-card, #skills > div {
+            background: #333;
+            padding: 24px;
+            border-radius: 12px;
+        }
+
+        .project-card h3, #skills > div h3 {
+            font-size: 20px;
+            color: yellow;
+        }
+
+        .project-card p, #skills > div ul {
+            color: white;
+            margin-top: 8px;
+            list-style-type: disc;
+            padding-left: 20px;
+        }
+
+        #projects .project-grid {
+            max-width: 1200px;
+            margin: 24px auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 24px;
+            padding: 0 24px;
+        }
+
+        #skills .skills-grid {
+            max-width: 1200px;
+            margin: 24px auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 24px;
+            padding: 0 24px;
+        }
+
+        footer {
+            background: linear-gradient(to right, gray, black);
+            text-align: center;
+            color: white;
+            padding: 24px 0;
+            border-top: 1px solid #444;
+        }
+
+
+/* Responsive Design */
+@media (max-width: 768px) {
+            header nav ul li {
+                display: block;
+                margin: 10px 0;
+            }
+
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 200px) {
+           header h1{
+            font-size: 1.5em;
+           }
+           header nav ul li{
+            font-size: 0.8em;
+           }
+           .button{
+            padding:5px 10px;
+            font-size: 0.7em;
+           }
+           section h2{
+            font-size: 1.2em;
+           }
+           .project-card h3{
+            font-size: 1em;
+           }
+           .skills-grid h3{
+            font-size: 1em;
+           }
+           body{
+            font-size: 0.8em;
+           }
+        }
+
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="header-container">
+            <h1>DEBIT KATUWAL</h1>
+            <span>Full Stack & MERN Stack Developer</span>
+            <nav>
+                <ul>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#">Services</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section id="home">
+        <h2>Full Stack Developer</h2>
+        <p>Crafting Dynamic and Scalable Applications for Modern Web Experiences</p>
+        <button class="button">Contact Me</button>
+        <button class="button">Download My CV</button>
+    </section>
+
+    <section id="about">
+        <h2>About Me</h2>
+        <p>I am a passionate Full Stack Developer with a strong drive for problem-solving and a commitment to continuous learning. My experience spans across building scalable web applications, from designing intuitive user interfaces to developing robust backend systems. I thrive on tackling complex challenges and delivering high-quality, efficient solutions. My goal is to leverage my skills to create impactful and innovative digital experiences.</p>
+    </section>
+
+    <section id="projects">
+        <h2>Projects</h2>
+        <div class="project-grid">
+            <div class="project-card">
+                <h3>E-commerce Platform</h3>
+                <p>React, FastAPI, MongoDB</p>
+                <p>A full-stack e-commerce platform with user authentication, product catalog, and shopping cart functionality.</p>
+            </div>
+            <div class="project-card">
+                <h3>Portfolio Website</h3>
+                <p>Responsive Design, Modern Technologies</p>
+                <p>A personal portfolio website showcasing skills and projects with a responsive and modern design.</p>
+            </div>
+            <div class="project-card">
+                <h3>Expense Tracker App</h3>
+                <p>React Native, Real-time Sync</p>
+                <p>A cross-platform mobile app for tracking expenses with real-time synchronization.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="skills">
+        <h2>Technical Skills</h2>
+        <div class="skills-grid">
+            <div>
+                <h3>Frontend Development</h3>
+                <ul>
+                    <li>HTML, CSS, JavaScript</li>
+                    <li>React.js, Vue.js, Angular</li>
+                    <li>Responsive Design, Tailwind CSS</li>
+                    <li>Animation Libraries (Framer Motion)</li>
+                    <li>Next.js, Svelte, Gatsby</li>
+                </ul>
+            </div>
+            <div>
+                <h3>Backend Development</h3>
+                <ul>
+                    <li>Node.js, Express, FastAPI</li>
+                    <li>Django, Flask</li>
+                    <li>GraphQL, REST APIs</li>
+                    <li>JWT Authentication, OAuth</li>
+                    <li>Microservices Architecture</li>
+                </ul>
+            </div>
+            <div>
+                <h3>Tools & Databases</h3>
+                <ul>
+                    <li>MongoDB, MySQL, PostgreSQL</li>
+                    <li>Docker, CI/CD, Git</li>
+                    <li>Redux, Zustand, MobX</li>
+                    <li>Cloud Services (AWS, GCP, Azure)</li>
+                    <li>GraphQL Playground, Postman</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Debit Katuwal. All rights reserved.</p>
+    </footer>
+</body>
+</html>

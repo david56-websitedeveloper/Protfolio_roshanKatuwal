@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YouTube Clone - Header</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://kit.fontawesome.com/your-fontawesome-kit.js" crossorigin="anonymous"></script>
+</head>
+<body class="bg-gray-100">
+
+    <header class="bg-white shadow-md sticky top-0 z-50">
+        <div class="container mx-auto flex justify-between items-center p-4">
+            <div class="flex items-center">
+                <button id="menu-toggle" class="mr-4 focus:outline-none">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                    </svg>
+                </button>
+                <img src="https://www.youtube.com/about/static/svgs/icons/brand-youtube-logo.svg" alt="YouTube Logo" class="h-6">
+            </div>
+            <div class="flex items-center flex-grow mx-4">
+                <div class="flex w-full">
+                    <input type="text" placeholder="Search" class="border border-gray-300 rounded-l-full px-4 py-2 w-full focus:outline-none">
+                    <button class="bg-gray-200 border border-gray-300 rounded-r-full px-4 py-2 focus:outline-none">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                        </svg>
+                    </button>
+                </div>
+                <button class="ml-2 bg-gray-200 rounded-full p-2 focus:outline-none hidden sm:block">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11a7 7 0 01-7 7m0 0a7 7 0 01-7-7m7 7v-2m0-8v2" />
+                    </svg>
+                </button>
+            </div>
+            <div class="flex items-center">
+                <button class="mr-2 focus:outline-none">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.158a2.032 2.032 0 01-.595 1.437L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9" />
+                    </svg>
+                </button>
+                <button class="rounded-full bg-gray-300 h-8 w-8 focus:outline-none">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mx-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5.121 17.804A13.937 13.937 0 0112 16c2.5 0 4.847.655 6.879 1.804M15 10a3 3 0 11-6 0 3 3 0 016 0zm6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main class="p-4">
+
+         <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+        
+         <div class="rounded-lg overflow-hidden shadow-md bg-white">
+        
+         <img src="https://via.placeholder.com/320x180" alt="Video Thumbnail" class="w-full">
+        
+        <div class="p-4">
+        
+         <h2 class="text-lg font-semibold">Video Title 1</h2>
+        
+         <p class="text-sm text-gray-600">Channel Name</p>
+        
+         <p class="text-sm text-gray-500">100K views • 1 day ago</p>
+        
+        </div>
+        
+       </div>
+        
+        
+        
+         <div class="rounded-lg overflow-hidden shadow-md bg-white">
+        
+         <img src="https://via.placeholder.com/320x180" alt="Video Thumbnail" class="w-full">
+        
+       <div class="p-4">
+        
+        <h2 class="text-lg font-semibold">Video Title 2</h2>
+        
+       <p class="text-sm text-gray-600">Channel Name</p>
+        
+        <p class="text-sm text-gray-500">50K views • 2 days ago</p>
+        
+       </div>
+        
+      </div>
+        
+        
+        
+         <div class="rounded-lg overflow-hidden shadow-md bg-white">
+        
+       <img src="https://via.placeholder.com/320x180" alt="Video Thumbnail" class="w-full">
+        
+        <div class="p-4">
+        
+       <h2 class="text-lg font-semibold">Video Title 3</h2>
+        
+        <p class="text-sm text-gray-600">Channel Name</p>
+        
+        <p class="text-sm text-gray-500">200K views • 3 days ago</p>
+        
+        </div>
+        
+         </div>
+
+         <div class="rounded-lg overflow-hidden shadow-md bg-white">
+        
+            <img src="https://via.placeholder.com/320x180" alt="Video Thumbnail" class="w-full">
+           
+          <div class="p-4">
+           
+           <h2 class="text-lg font-semibold">Video Title 2</h2>
+           
+          <p class="text-sm text-gray-600">Channel Name</p>
+           
+           <p class="text-sm text-gray-500">50K views • 2 days ago</p>
+           
+          </div>
+           
+         </div>
+           
+           
+           
+            <div class="rounded-lg overflow-hidden shadow-md bg-white">
+           
+          <img src="https://via.placeholder.com/320x180" alt="Video Thumbnail" class="w-full">
+           
+           <div class="p-4">
+           
+          <h2 class="text-lg font-semibold">Video Title 3</h2>
+           
+           <p class="text-sm text-gray-600">Channel Name</p>
+           
+           <p class="text-sm text-gray-500">200K views • 3 days ago</p>
+           
+           </div>
+           
+            </div>
+        
+            
+            <div class="rounded-lg overflow-hidden shadow-md bg-white">
+        
+                <img src="https://via.placeholder.com/320x180" alt="Video Thumbnail" class="w-full">
+               
+              <div class="p-4">
+               
+               <h2 class="text-lg font-semibold">Video Title 2</h2>
+               
+              <p class="text-sm text-gray-600">Channel Name</p>
+               
+               <p class="text-sm text-gray-500">50K views • 2 days ago</p>
+               
+              </div>
+               
+             </div>
+               
+               
+               
+                <div class="rounded-lg overflow-hidden shadow-md bg-white">
+               
+              <img src="https://via.placeholder.com/320x180" alt="Video Thumbnail" class="w-full">
+               
+               <div class="p-4">
+               
+              <h2 class="text-lg font-semibold">Video Title 3</h2>
+               
+               <p class="text-sm text-gray-600">Channel Name</p>
+               
+               <p class="text-sm text-gray-500">200K views • 3 days ago</p>
+               
+               </div>
+               
+                </div>
+        
+                
+                <div class="rounded-lg overflow-hidden shadow-md bg-white">
+        
+                    <img src="https://via.placeholder.com/320x180" alt="Video Thumbnail" class="w-full">
+                   
+                  <div class="p-4">
+                   
+                   <h2 class="text-lg font-semibold">Video Title 2</h2>
+                   
+                  <p class="text-sm text-gray-600">Channel Name</p>
+                   
+                   <p class="text-sm text-gray-500">50K views • 2 days ago</p>
+                   
+                  </div>
+                   
+                 </div>
+                   
+                   
+                   
+                    <div class="rounded-lg overflow-hidden shadow-md bg-white">
+                   
+                  <img src="https://via.placeholder.com/320x180" alt="Video Thumbnail" class="w-full">
+                   
+                   <div class="p-4">
+                   
+                  <h2 class="text-lg font-semibold">Video Title 3</h2>
+                   
+                   <p class="text-sm text-gray-600">Channel Name</p>
+                   
+                   <p class="text-sm text-gray-500">200K views • 3 days ago</p>
+                   
+                   </div>
+                   
+                    </div>
+        
+                    
+                    <div class="rounded-lg overflow-hidden shadow-md bg-white">
+        
+                        <img src="https://via.placeholder.com/320x180" alt="Video Thumbnail" class="w-full">
+                       
+                      <div class="p-4">
+                       
+                       <h2 class="text-lg font-semibold">Video Title 2</h2>
+                       
+                      <p class="text-sm text-gray-600">Channel Name</p>
+                       
+                       <p class="text-sm text-gray-500">50K views • 2 days ago</p>
+                       
+                      </div>
+                       
+                     </div>
+                       
+                       
+                       
+                        <div class="rounded-lg overflow-hidden shadow-md bg-white">
+                       
+                      <img src="https://via.placeholder.com/320x180" alt="Video Thumbnail" class="w-full">
+                       
+                       <div class="p-4">
+                       
+                      <h2 class="text-lg font-semibold">Video Title 3</h2>
+                       
+                       <p class="text-sm text-gray-600">Channel Name</p>
+                       
+                       <p class="text-sm text-gray-500">200K views • 3 days ago</p>
+                       
+                       </div>
+                       
+                        </div>
+        
+                        
+                        <div class="rounded-lg overflow-hidden shadow-md bg-white">
+        
+                            <img src="https://via.placeholder.com/320x180" alt="Video Thumbnail" class="w-full">
+                           
+                          <div class="p-4">
+                           
+                           <h2 class="text-lg font-semibold">Video Title 2</h2>
+                           
+                          <p class="text-sm text-gray-600">Channel Name</p>
+                           
+                           <p class="text-sm text-gray-500">50K views • 2 days ago</p>
+                           
+                          </div>
+                           
+                         </div>
+                           
+                           
+                           
+                            <div class="rounded-lg overflow-hidden shadow-md bg-white">
+                           
+                          <img src="https://via.placeholder.com/320x180" alt="Video Thumbnail" class="w-full">
+                           
+                           <div class="p-4">
+                           
+                          <h2 class="text-lg font-semibold">Video Title 3</h2>
+                           
+                           <p class="text-sm text-gray-600">Channel Name</p>
+                           
+                           <p class="text-sm text-gray-500">200K views • 3 days ago</p>
+                           
+                           </div>
+                           
+                            </div>
+        
+                            
+                            <div class="rounded-lg overflow-hidden shadow-md bg-white">
+        
+                                <img src="https://via.placeholder.com/320x180" alt="Video Thumbnail" class="w-full">
+                               
+                              <div class="p-4">
+                               
+                               <h2 class="text-lg font-semibold">Video Title 2</h2>
+                               
+                              <p class="text-sm text-gray-600">Channel Name</p>
+                               
+                               <p class="text-sm text-gray-500">50K views • 2 days ago</p>
+                               
+                              </div>
+                               
+                             </div>
+                               
+                               
+                               
+                                <div class="rounded-lg overflow-hidden shadow-md bg-white">
+                               
+                              <img src="https://via.placeholder.com/320x180" alt="Video Thumbnail" class="w-full">
+                               
+                               <div class="p-4">
+                               
+                              <h2 class="text-lg font-semibold">Video Title 3</h2>
+                               
+                               <p class="text-sm text-gray-600">Channel Name</p>
+                               
+                               <p class="text-sm text-gray-500">200K views • 3 days ago</p>
+                               
+                               </div>
+                               
+                                </div>
+        
+                                
+
+                                <div class="rounded-lg overflow-hidden shadow-md bg-white">
+        
+                                    <img src="https://via.placeholder.com/320x180" alt="Video Thumbnail" class="w-full">
+                                   
+                                  <div class="p-4">
+                                   
+                                   <h2 class="text-lg font-semibold">Video Title 2</h2>
+                                   
+                                  <p class="text-sm text-gray-600">Channel Name</p>
+                                   
+                                   <p class="text-sm text-gray-500">50K views • 2 days ago</p>
+                                   
+                                  </div>
+                                   
+                                 </div>
+                                   
+                                   
+                                   
+                                    <div class="rounded-lg overflow-hidden shadow-md bg-white">
+                                   
+                                  <img src="https://via.placeholder.com/320x180" alt="Video Thumbnail" class="w-full">
+                                   
+                                   <div class="p-4">
+                                   
+                                  <h2 class="text-lg font-semibold">Video Title 3</h2>
+                                   
+                                   <p class="text-sm text-gray-600">Channel Name</p>
+                                   
+                                   <p class="text-sm text-gray-500">200K views • 3 days ago</p>
+                                   
+                                   </div>
+                                   
+                                    </div>
+        
+                                    
+                                    <div class="rounded-lg overflow-hidden shadow-md bg-white">
+        
+                                        <img src="https://via.placeholder.com/320x180" alt="Video Thumbnail" class="w-full">
+                                       
+                                      <div class="p-4">
+                                       
+                                       <h2 class="text-lg font-semibold">Video Title 2</h2>
+                                       
+                                      <p class="text-sm text-gray-600">Channel Name</p>
+                                       
+                                       <p class="text-sm text-gray-500">50K views • 2 days ago</p>
+                                       
+                                      </div>
+                                       
+                                     </div>
+                                       
+                                       
+                                       
+                                        <div class="rounded-lg overflow-hidden shadow-md bg-white">
+                                       
+                                      <img src="https://via.placeholder.com/320x180" alt="Video Thumbnail" class="w-full">
+                                       
+                                       <div class="p-4">
+                                       
+                                      <h2 class="text-lg font-semibold">Video Title 3</h2>
+                                       
+                                       <p class="text-sm text-gray-600">Channel Name</p>
+                                       
+                                       <p class="text-sm text-gray-500">200K views • 3 days ago</p>
+                                       
+                                       </div>
+                                       
+                                        </div>
+        
+                                        
+                                        
+        
+        
+        
+        <div class="rounded-lg overflow-hidden shadow-md bg-white">
+        
+       <img src="https://via.placeholder.com/320x180" alt="Video Thumbnail" class="w-full">
+        
+        <div class="p-4">
+        
+         <h2 class="text-lg font-semibold">Video Title 4</h2>
+        
+        <p class="text-sm text-gray-600">Channel Name</p>
+        
+         <p class="text-sm text-gray-500">1M views • 4 days ago</p>
+        
+         </div>
+        
+        </div>
+        
+        
+        
+         </div>
+        
+        </main>
+
+
+
+
+        <script src="https://cdn.tailwindcss.com"></script>
+
+</body>
+</html>
