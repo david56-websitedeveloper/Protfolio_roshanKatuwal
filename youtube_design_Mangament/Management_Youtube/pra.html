@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Control Panel</title>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f2f5;
+            color: #333;
+        }
+
+        .container {
+            display: flex;
+            height: 100vh;
+        }
+
+        /* Sidebar (Laptop View) */
+        .sidebar {
+            width: 250px;
+            background: linear-gradient(135deg, #4A90E2, #0056b3);
+            color: white;
+            padding: 20px;
+            box-sizing: border-box;
+            font-size: 1.5em;
+            display: flex;
+            align-items: center;
+            font-weight: bold;
+            text-align: center;
+            border-radius: 0 10px 10px 0;
+        }
+
+        /* Content Area */
+        .content {
+            flex: 1;
+            padding: 20px;
+            box-sizing: border-box;
+            overflow-y: auto;
+            margin-left: 250px; /* Leave space for sidebar in laptop view */
+            transition: margin-left 0.3s;
+        }
+
+       /* Header */
+.content-header {
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.content-header h1 {
+  margin: 0;
+  font-size: 1.8em;
+  color: #0056b3;
+}
+
+/* Filter Bar */
+.filter-bar {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.filter-bar input[type="text"],
+.filter-bar select {
+  background-color: white;
+  border: 1px solid #ccc;
+  padding: 10px;
+  color: #333;
+  border-radius: 5px;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+  transition: 0.3s;
+}
+
+.filter-bar input[type="text"]:focus,
+.filter-bar select:focus {
+  border-color: #4A90E2;
+  outline: none;
+}
+
+/* Table */
+.product-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: white;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.product-table th,
+.product-table td {
+  padding: 12px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+.product-table th {
+  background-color: #4A90E2;
+  color: white;
+  font-weight: bold;
+}
+
+.product-table tr:hover {
+  background-color: #f1f1f1;
+}
+
+
+/* SEARCH */
+
+.SEARCH{
+  height: 25px;
+  width: 400px;
+  font-size: 25px;
+}
+
+.Search{
+font-size: 20px;
+width: auto;
+}
+
+/* Action Buttons */
+.action-buttons {
+  display: none;
+  text-align: center;
+}
+
+.action-buttons button {
+  background-color: #4A90E2;
+  color: #fff;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s;
+  margin: 2px;
+}
+
+.action-buttons button:hover {
+  background-color: #0056b3;
+}
+
+/* Show action buttons only on row hover */
+.product-table tr:hover .action-buttons {
+  display: block;
+}
+        /* Mobile-Specific Styles */
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+            }
+
+            /* Mobile Sidebar (Initially Hidden) */
+            .sidebar {
+                position: fixed;
+                left: -250px; /* Hide sidebar off-screen */
+                top: 0;
+                bottom: 0;
+                height: 100vh;
+                width: 200px; /* Set max width as requested */
+                transition: left 0.3s ease;
+                z-index: 100; /* Ensure it's on top */
+            }
+
+            /* Show Sidebar on Mobile */
+            .sidebar.open {
+                left: 0; /* Slide sidebar in */
+            }
+
+            /* Close Button (Mobile Only) */
+            .close-btn {
+                position: absolute;
+                top: 10px;
+                right: 10px;
+                font-size: 1.5em;
+                cursor: pointer;
+            }
+
+            /* Menu Button (Mobile Only) */
+            .menu-btn {
+                display: block;
+                font-size: 2em;
+                color: #4A90E2;
+                cursor: pointer;
+                padding: 10px;
+            }
+
+            /* Adjust Content Area on Mobile */
+            .content {
+                margin-left: 0; /* No margin on mobile */
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="menu-btn" id="menu-btn">&#9776;</div>
+    <div class="container">
+        <div class="sidebar" id="sidebar">
+            <div class="close-btn" id="close-btn">&times;</div>
+            Sidebar
+        </div>
+        <div class="content">
+            <div class="content-header">
+                <h1>Management</h1>
+            </div>
+            <div class="filter-bar">
+                <input type="text" placeholder="search...." class="SEARCH">
+                <select class="Search">
+                    <option value="" class="Search">Filter by branch Name...</option>
+                    <option value="home design1" class="Search">Home design1</option>
+                </select>
+            </div>
+            <table class="product-table">
+                <thead>
+                    <tr class="Search">
+                        <th>Invoice Number</th>
+                        <th>Product name</th>
+                        <th>Product stack</th>
+                        <th>Unit price</th>
+                        <th>Photo</th>
+                        <th>Branch name</th>
+                        <th>Date</th>
+                        <th>Total</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="Search">
+                        <td>12345</td>
+                        <td>Double bed sopha</td>
+                        <td>10</td>
+                        <td>2000</td>
+                        <td><button>Photo</button></td>
+                        <td>Home design1</td>
+                        <td>2023-10-28</td>
+                        <td>$20,000
+                            <div class="action-buttons">
+                                <button>Edit</button>
+                                <button>Delete</button>
+                                <button>Open</button>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script>
+        const menuBtn = document.getElementById('menu-btn');
+        const closeBtn = document.getElementById('close-btn');
+        const sidebar = document.getElementById('sidebar');
+        const content = document.querySelector('.content');
+
+        if (menuBtn) {
+            menuBtn.addEventListener('click', () => {
+                sidebar.classList.add('open');
+            });
+        }
+
+        if (closeBtn) {
+            closeBtn.addEventListener('click', () => {
+                sidebar.classList.remove('open');
+            });
+        }
+    </script>
+</body>
+</html>

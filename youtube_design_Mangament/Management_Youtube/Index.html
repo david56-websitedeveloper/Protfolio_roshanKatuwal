@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Invoice Management System</title>
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif; /* Use Roboto font or similar */
+            margin: 0;
+            padding: 0;
+            background-color: #181818;
+            color: #fff;
+        }
+
+        .container {
+            display: flex;
+            height: 100vh;
+        }
+
+        .sidebar {
+            width: 250px;
+            background-color: #212121;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        .sidebar h2 {
+            margin-top: 0;
+            font-size: 1.2em;
+        }
+
+        .sidebar ul {
+            list-style: none;
+            padding: 0;
+            margin: 20px 0;
+        }
+
+        .sidebar li {
+            padding: 10px;
+            cursor: pointer;
+            border-radius: 5px;
+            margin-bottom: 5px; /* Add spacing between items */
+        }
+
+        .sidebar li:hover {
+            background-color: #3a3a3a;
+        }
+
+        .sidebar li.active {
+            background-color: #065fd4;
+        }
+
+        .content {
+            flex: 1;
+            padding: 20px;
+            box-sizing: border-box;
+            overflow-y: auto; /* Add vertical scrollbar if content overflows */
+        }
+
+        .content-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .content-header h1 {
+            margin: 0;
+            font-size: 1.5em;
+        }
+
+        .tabs {
+            display: flex;
+            border-bottom: 1px solid #3a3a3a; /* Add a subtle border */
+        }
+
+        .tabs a {
+            padding: 10px 15px;
+            text-decoration: none;
+            color: #aaa;
+            margin-right: 10px;
+            position: relative; /* For positioning the bottom border */
+        }
+
+        .tabs a.active {
+            color: #fff;
+            font-weight: bold;
+        }
+
+        .tabs a.active::after {
+            content: '';
+            position: absolute;
+            bottom: -1px;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background-color: #065fd4;
+        }
+
+        .filter-bar {
+            background-color: #212121;
+            padding: 10px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+        }
+
+        .filter-bar input[type="text"] {
+            background-color: #3a3a3a;
+            border: none;
+            padding: 8px;
+            color: #fff;
+            border-radius: 3px;
+            flex: 1; /* Allow input to take available space */
+            margin-right: 10px;
+        }
+
+        .video-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .video-table th, .video-table td {
+            padding: 10px;
+            text-align: left;
+            border-bottom: 1px solid #3a3a3a;
+        }
+
+        .video-table th {
+            font-weight: bold;
+        }
+
+        .video-table tr:hover {
+            background-color: #3a3a3a;
+        }
+
+        .profile-section {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .profile-image {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background-color: #aaa;
+            margin-right: 15px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 1.5em;
+        }
+
+        .profile-info h3 {
+            margin: 0;
+        }
+
+        .profile-info p {
+            margin: 5px 0 0;
+            color: #aaa;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+
+        <div class="content">
+            <div class="content-header">
+                <h1>invoice Management</h1>
+                <div class="tabs">
+                    <a href="#" class="active">Videos</a>
+                    <a href="#">Shorts</a>
+                    <a href="#">Live</a>
+                    <a href="#">Posts</a>
+                    <a href="#">Playlists</a>
+                    <a href="#">Podcasts</a>
+                    <a href="#">Promotions</a>
+                </div>
+            </div>
+            <div class="filter-bar">
+                <input type="text" placeholder="Filter">
+            </div>
+            <table class="video-table">
+                <thead>
+                    <tr>
+                        <th>Video</th>
+                        <th>Visibility</th>
+                        <th>Restrictions</th>
+                        <th>Date</th>
+                        <th>Views</th>
+                        <th>Comments</th>
+                        <th>Likes (vs. dislikes)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Video Title 1</td>
+                        <td>Public</td>
+                        <td>None</td>
+                        <td>2023-10-27</td>
+                        <td>1000</td>
+                        <td>50</td>
+                        <td>950 / 50</td>
+                    </tr>
+                    <tr>
+                        <td>Video Title 2</td>
+                        <td>Public</td>
+                        <td>None</td>
+                        <td>2023-10-26</td>
+                        <td>500</td>
+                        <td>25</td>
+                        <td>475 / 25</td>
+                    </tr>
+                    </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+</html>
